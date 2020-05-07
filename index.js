@@ -9,7 +9,7 @@ plot.bar(labels, data);
 // plot.doughnut(labels, data);
 
 
-const test = new Plot();
-test.line(labels, [[...data], [10, 34]]);
+// const test = new Plot();
+// test.line(labels, [[...data], [10, 34]]);
 
 // module.exports = { Plot };
