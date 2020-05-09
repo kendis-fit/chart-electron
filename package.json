@@ -9,5 +9,12 @@
   },
   "devDependencies": {
     "electron": "^8.2.5"
-  }
+  },
+  "keywords": [
+    "electron",
+    "chart",
+    "matplotlib",
+    "chart-electron"
+  ],
+  "repository": "https://github.com/kendis-fit/chart-electron"
 }
