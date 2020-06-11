@@ -7,7 +7,7 @@ npm i chart-electron
 ```
 
 ## Examples
-```shell
+```js
 const { Plot } = require("chart-electron");
 
 const labels = ["Apple", "Bananas", "Others"];
