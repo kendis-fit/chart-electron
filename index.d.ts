@@ -27,7 +27,7 @@ declare module "chart-electron" {
     
         bubble(labels: string[], data: IPoint[][]): void;
     
-        save(path: string): void;
+        // save(path: string): void;
     
         show(): void;
     } 
