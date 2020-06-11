@@ -24,7 +24,7 @@ polar.show();
 ```
 
 ## Methods
-```shell
+```ts
 // charts
 bar(labels: string[], data: number[]): void; 
 horizontalBar(labels: string[], data: number[]): void;
