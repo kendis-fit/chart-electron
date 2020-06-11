@@ -4,16 +4,24 @@
     <meta charset="UTF-8">
     <title>Plot</title>
     <style>
-        #chart {
+        .chart {
             margin: 0;
             padding: 0;
             height: 100%;
             width: 100%;
         }
+        .button-groups {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
-    <canvas id="chart"></canvas>
+    <canvas id="chart" class="chart"></canvas>
+    <div class="button-groups">
+        <button onclick="downloadChart();">Download</button>
+    </div>
     <script src="renderer.js"></script>
 </body>
 </html>

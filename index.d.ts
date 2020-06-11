@@ -26,9 +26,7 @@ declare module "chart-electron" {
         groupedBar(labels: string[], data: number[]): void;
     
         bubble(labels: string[], data: IPoint[][]): void;
-    
-        // save(path: string): void;
-    
+
         show(): void;
     } 
 }
