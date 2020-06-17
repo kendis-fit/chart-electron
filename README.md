@@ -50,16 +50,18 @@ plot3.show();
 
 // also you can set a plot
 const plot4 = new Plot(plotCnfg, {
-    saveAfterLoadingPath: 'test.jpg', // save chart after loading insently, you can save in jpg or png. IT WORKS ONLY WHEN YOU SHOW CHART 
-    hideButtons: true // there is one button 'download', you can hide it if you wanna
+    hideButtons: true,
+    closeAfterLoading: true,
+    saveAfterLoadingPath: 'test.jpg',
 });
 plot4.show();
 ```
 
 ## Options
-```js
-saveAfterLoadingPath
-hideButtons
+```shall
+hideButtons - there is one button 'download' under the chart
+closeAfterLoading - you can combine it with saving file, unfortunately electron can't execute in background 
+saveAfterLoadingPath - save chart after loading insently, you can save in jpg or png. IT WORKS ONLY WHEN YOU SHOW CHAR
 ```
 
 ## Methods
