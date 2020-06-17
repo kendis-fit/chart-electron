@@ -1,41 +1,69 @@
 # Intoduction
-A simple application that combinates two library electron and chart, also it launchs with help of node(without Electron).
+A simple application that combinates two library electron and chart, also it launchs with help of node. Typescript is included out of box.
 
 ## Installation
-```shell
-npm i chart-electron
-```
+NPM
+> npm i chart-electron
+
+YARN
+> yarn add chart-electron
+
+## Chart support
+* bar
+* horizontal bar
+* pie
+* polar
+* doughunt
+* line
+* radar
+* bubble
 
 ## Examples
-```shell
-const { Plot } = require("chart-electron");
+```js
+const { Plot } = require('chart-electron');
 
-const labels = ["Apple", "Bananas", "Others"];
+// this example fits only for bar, horizontalBar, pie, polar, doughunt
+const labels = ['Apple', 'Bananas', 'Others'];
 const dataset = [34, 54, 21];
 
-const plot = new Plot();
-plot.bar(labels, dataset);
+const plot = new Plot({ type: 'bar', labels, data: dataset });
 plot.show(); // this method is required to show a chart
 
-// also you can make a few plots per one time
-const polar = new Plot();
-polar.polar(labels, dataset);
-polar.show();
+// this example fits only for line, radar
+const labels2 = labels;
+const dataset2 = [[12, 33, 99], [32, 41, 23], [22, 34.2, 12.3]];
+
+const plot2 = new Plot({ type: 'line', labels: labels2, data: dataset2 });
+plot2.show();
+
+// this example fits only for bubble
+const labels3 = labels;
+const dataset3 = [[{ x: 20, y: 34, r: 15 }], [{ x: 56, y: 21, r: 56 }], [{ x: 43, y: 67, r: 36 }, { x: 11, y: 21, r: 78 }]];
+const plotCnfg = {
+    type: 'bubble',
+    labels: labels3,
+    data: dataset3
+}
+
+const plot3 = new Plot(plotCnfg);
+plot3.show();
+
+// also you can set a plot
+const plot4 = new Plot(plotCnfg, {
+    saveAfterLoadingPath: 'test.jpg', // save chart after loading insently, you can save in jpg or png. IT WORKS ONLY WHEN YOU SHOW CHART 
+    hideButtons: true // there is one button 'download', you can hide it if you wanna
+});
+plot4.show();
+```
+
+## Options
+```js
+saveAfterLoadingPath
+hideButtons
 ```
 
 ## Methods
-```shell
-// charts
-bar(labels: string[], data: number[]): void; 
-horizontalBar(labels: string[], data: number[]): void;
-pie(labels: string[], data: number[]): void;
-polar(labels: string[], data: number[]): void;
-doughnut(labels: string[], data: number[]): void;
-line(labels: string[], data: number[][]): void;
-radar(labels: string[], data: number[][]): void;
-groupedBar(labels: string[], data: number[]): void;
-bubble(labels: string[], data: IPoint[][]): void;
-
-// others
+```js
+constructor(plot: IPlot, options?: IPlotOptions);
 show(): void;
 ```

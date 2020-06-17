@@ -1,4 +1,21 @@
 declare module "chart-electron" {
+    type Chart = "bar" | "horizontalBar" | "pie" | "polar" | "doughunt" | "line" | "radar" | "bubble";
+    
+    type ChartData = number[] //  bar, horizontalBar, pie, polar, doughunt
+                    | number[][] // line, radar
+                    | IPoint[][]; // bubble
+
+    interface IPlot {
+        type: Chart;
+        labels: string[];
+        data: ChartData;
+    }
+
+    interface IPlotOptions {
+        saveAfterLoadingPath?: boolean;
+        hideButtons?: boolean;
+    }
+
     interface IPoint {
         x: number;
         y: number;
@@ -6,27 +23,7 @@ declare module "chart-electron" {
     }
     
     class Plot {
-        
-        constructor();
-    
-        bar(labels: string[], data: number[]): void;
-    
-        horizontalBar(labels: string[], data: number[]): void;
-    
-        pie(labels: string[], data: number[]): void;
-    
-        polar(labels: string[], data: number[]): void;
-    
-        doughnut(labels: string[], data: number[]): void;
-    
-        line(labels: string[], data: number[][]): void;
-    
-        radar(labels: string[], data: number[][]): void;
-    
-        groupedBar(labels: string[], data: number[]): void;
-    
-        bubble(labels: string[], data: IPoint[][]): void;
-
+        constructor(plot: IPlot, options?: IPlotOptions);
         show(): void;
     } 
 }
