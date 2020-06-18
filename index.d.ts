@@ -1,7 +1,7 @@
 declare module "chart-electron" {
-    type Chart = "bar" | "horizontalBar" | "pie" | "polar" | "doughunt" | "line" | "radar" | "bubble";
+    type Chart = "bar" | "horizontalBar" | "pie" | "polar" | "doughnut" | "line" | "radar" | "bubble";
     
-    type ChartData = number[] //  bar, horizontalBar, pie, polar, doughunt
+    type ChartData = number[] //  bar, horizontalBar, pie, polar, doughnut
                     | number[][] // line, radar
                     | IPoint[][]; // bubble
 
@@ -12,8 +12,9 @@ declare module "chart-electron" {
     }
 
     interface IPlotOptions {
-        saveAfterLoadingPath?: boolean;
         hideButtons?: boolean;
+        closeAfterLoading?: boolean;
+        saveAfterLoadingPath?: boolean;
     }
 
     interface IPoint {

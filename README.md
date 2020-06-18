@@ -13,7 +13,7 @@ YARN
 * horizontal bar
 * pie
 * polar
-* doughunt
+* doughnut
 * line
 * radar
 * bubble
@@ -22,7 +22,7 @@ YARN
 ```js
 const { Plot } = require('chart-electron');
 
-// this example fits only for bar, horizontalBar, pie, polar, doughunt
+// this example fits only for bar, horizontalBar, pie, polar, doughnut
 const labels = ['Apple', 'Bananas', 'Others'];
 const dataset = [34, 54, 21];
 
