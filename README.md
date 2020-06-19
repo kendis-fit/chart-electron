@@ -62,7 +62,9 @@ plot5.save('test.png');
 ## Methods
 ```js
 /* constructors */
-constructor(plot: IPlot, options?: IPlotOptions);
+constructor(plot: IPlotArray, options?: IPlotOptions);
+constructor(plot: IPlot2Array, options?: IPlotOptions);
+constructor(plot: IPlotPoint2Array, options?: IPlotOptions);
 /* fields */
 plot: IPlotJson;
 options: IPlotOptionsJson;
