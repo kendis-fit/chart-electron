@@ -1,6 +1,6 @@
 {
   "name": "chart-electron",
-  "version": "1.1.2",
+  "version": "2.0.0",
   "main": "index.js",
   "author": "Kurt Endless",
   "license": "MIT",
@@ -12,7 +12,8 @@
     "electron",
     "chart",
     "matplotlib",
-    "chart-electron"
+    "chart-electron",
+    "electron-chart"
   ],
   "repository": "https://github.com/kendis-fit/chart-electron"
 }

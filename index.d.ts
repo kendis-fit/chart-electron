@@ -13,8 +13,6 @@ declare module "chart-electron" {
 
     interface IPlotOptions {
         hideButtons?: boolean;
-        closeAfterLoading?: boolean;
-        saveAfterLoadingPath?: boolean;
     }
 
     interface IPoint {
@@ -22,9 +20,23 @@ declare module "chart-electron" {
         y: number;
         r: number;
     }
+
+    interface IJson {
+        toJson(): string;
+    }
+
+    interface IPlotJson extends IPlot, IJson {}
+
+    interface IPlotOptionsJson extends IPlotOptions, IJson {}
     
     class Plot {
+        /* constructors */
         constructor(plot: IPlot, options?: IPlotOptions);
+        /* fields */
+        plot: IPlotJson;
+        options: IPlotOptionsJson;
+        /* methods */
+        save(path: string): void;
         show(): void;
     } 
 }

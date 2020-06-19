@@ -48,24 +48,25 @@ const plotCnfg = {
 const plot3 = new Plot(plotCnfg);
 plot3.show();
 
-// also you can set a plot
+// also you can set options for a plot
 const plot4 = new Plot(plotCnfg, {
-    hideButtons: true,
-    closeAfterLoading: true,
-    saveAfterLoadingPath: 'test.jpg',
+    hideButtons: true
 });
 plot4.show();
-```
 
-## Options
-```shall
-hideButtons - there is one button 'download' under the chart
-closeAfterLoading - you can combine it with saving file, unfortunately electron can't execute in background 
-saveAfterLoadingPath - save chart after loading insently, you can save in jpg or png. IT WORKS ONLY WHEN YOU SHOW CHAR
+// or you can save a plot
+const plot5 = new Plot(plotCnfg);
+plot5.save('test.png');
 ```
 
 ## Methods
 ```js
+/* constructors */
 constructor(plot: IPlot, options?: IPlotOptions);
+/* fields */
+plot: IPlotJson;
+options: IPlotOptionsJson;
+/* methods */
+save(path: string): void;
 show(): void;
 ```
