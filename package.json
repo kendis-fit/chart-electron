@@ -6,7 +6,7 @@
   "license": "MIT",
   "dependencies": {
     "chart.js": "^2.9.4",
-    "electron": "^15.5.5"
+    "electron": "^18.3.7"
   },
   "keywords": [
     "electron",
